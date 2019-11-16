@@ -2,6 +2,11 @@
 """
 import PyPDF2
 from nltk.tokenize import word_tokenize
+from . import _utils
+
+
+class FileTypeNotSupported(Exception):
+    pass
 
 
 class Reader():
@@ -68,9 +73,28 @@ class PDF(Reader):
         return text
 
 
+class GenericReader(Reader):
+    """Generic file reader takes any kind of file, try to guess its type
+    and use the appropriate Reader class if supported.
+    """
+    MIME_TO_READER = {
+        'application/pdf': PDF,
+        }
+
+    def get_text(self, path, stream=None):
+        mime = _utils.get_file_mime(path)
+        reader_class = self.MIME_TO_READER.get(mime)
+        if reader_class is None:
+            raise FileTypeNotSupported(mime)
+        reader = reader_class()
+        return reader.get_text(path)
+
+
 def new(reader_name):
     """Get reader instance for the wanted format.
     """
     if reader_name == 'pdf':
         return PDF()
+    elif reader_name == 'generic':
+        return GenericReader()
     return None
