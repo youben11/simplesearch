@@ -80,7 +80,7 @@ class SimpleIndexDB(Database):
 
         locations = self.get_locations(lemma)
         if locations is not None:
-            if locations:
+            if locations and location not in locations.split(','):
                 locations += ',' + location
             else:
                 locations = location
