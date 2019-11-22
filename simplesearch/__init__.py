@@ -1,6 +1,6 @@
 """Index and search in a set of documents of different formats.
 """
-from simplesearch import readers, index
+from simplesearch import readers, index, search
 
 
 def add_file_to_index(path):
@@ -10,3 +10,9 @@ def add_file_to_index(path):
     tokens = list(set(tokens))
     indexer = index.SimpleIndexer()
     indexer.index(tokens, path)
+
+
+def search_keywords(values: list):
+    """Wrapper around search functionalitites.
+    """
+    return search.search_simple_index(values)
