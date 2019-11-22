@@ -1,6 +1,6 @@
 # SimpleSearch
 
-SimpleSearch lets you index and search your documents. It was designed to manipulate different type of documents without user's care.
+SimpleSearch lets you index and search your documents. It was designed to manipulate different types of documents transparently.
 
 #### Note
 
@@ -26,7 +26,7 @@ $ python3 setup.py install
 
 ## Usage
 
-Simple users will only find two function calls usefull, `add_file_to_index()` and `search_keyword()`, those two will allow you to build the index of your documents as well as searching using a list of keywords.
+Simple users will only find two function calls useful, `add_file_to_index()` and `search_keyword()`, those two will allow you to build the index of your documents as well as searching using a list of keywords.
 
 #### Note
 
