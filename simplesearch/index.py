@@ -10,7 +10,7 @@ class Indexer():
     """
 
     def __init__(self):
-        raise NotImplementedError("This class shouldn't be intacied.")
+        raise NotImplementedError("This class shouldn't be instancied.")
 
     def index(self, content, location):
         raise NotImplementedError
