@@ -10,7 +10,7 @@ requirements = read("requirements.txt").split()
 
 setuptools.setup(
     name="simplesearch",
-    version="0.0.1",
+    version="0.1a",
     author="Ayoub Benaissa",
     author_email="ayouben9@gmail.com",
     description="A library for doing search on different kind of files",
