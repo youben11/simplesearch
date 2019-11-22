@@ -2,7 +2,7 @@
 """
 import PyPDF2
 from nltk.tokenize import word_tokenize
-from . import _utils
+from simplesearch import _utils
 
 
 class FileTypeNotSupported(Exception):

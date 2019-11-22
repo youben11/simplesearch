@@ -1,5 +1,5 @@
 """Indexation logic for Simple Search."""
-from . import db_helper
+from simplesearch import db_helper
 
 
 class Indexer():
